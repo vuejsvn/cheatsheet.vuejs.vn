@@ -50,7 +50,7 @@ export default async ({ store }) => {
 	req.keys().map(key => {
 		const fileName = key.split('/').pop().replace(/\.\w+$/, '')
 		import(
-			`src/statics/api/${fileName}.json`
+			`src/statics/quasar/${fileName}.json`
 		).then(json => {
 			parseJson(json.default).then(result => {
 				store.dispatch('provider/pushItem', {
