@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-// import example from './module-example'
+import provider from './provider'
 
 Vue.use(Vuex)
 
@@ -10,16 +10,31 @@ Vue.use(Vuex)
  * directly export the Store instantiation
  */
 
-export default function (/* { ssrContext } */) {
-  const Store = new Vuex.Store({
-    modules: {
-      // example
-    },
+export default function( /* { ssrContext } */ ) {
+	const Store = new Vuex.Store({
+		modules: {
+			provider
+		},
 
-    // enable strict mode (adds overhead!)
-    // for dev mode only
-    strict: process.env.DEV
-  })
+		state: () => {
+			vueAwesome: []
+		},
+		actions: {
+			fetchVueAwesome: ({ commit }, payload) => {
+				commit('fetchVueAwesome', payload)
+			}
+		},
+		mutations: {
+			fetchVueAwesome: (state, payload) => state.vueAwesome = payload
+		},
+		getters: {
+			getAllVueAwesome: state => state.vueAwesome
+		},
 
-  return Store
+		// enable strict mode (adds overhead!)
+		// for dev mode only
+		strict: process.env.DEV
+	})
+
+	return Store
 }

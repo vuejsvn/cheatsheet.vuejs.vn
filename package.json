@@ -1,8 +1,8 @@
 {
-  "name": "quasar_cheatsheet",
+  "name": "cheatsheet",
   "version": "0.0.1",
-  "description": "Quasar CheatSheet help quick access to evething in Quasar Framework. eg: helper classes, config, variables, components, directives, plugin, ....",
-  "productName": "Quasar CheatSheet",
+  "description": "CheatSheet for Vuejs Ecosystem: frameworks, libraries, plugins, ...",
+  "productName": "CheatSheet",
   "cordovaId": "vn.vuejs.cheatsheet",
   "author": "Ton Cuong <ttquoccuong@gmail.com>",
   "private": true,

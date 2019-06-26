@@ -6,7 +6,10 @@ module.exports = function (ctx) {
     // --> boot files are part of "main.js"
     boot: [
       'i18n',
-      'axios'
+      'axios',
+      'components',
+      'awesome',
+      'provider'
     ],
 
     css: [
@@ -23,42 +26,34 @@ module.exports = function (ctx) {
     ],
 
     framework: {
-      // all: true, // --- includes everything; for dev only!
+      all: true,
 
-      components: [
-        'QLayout',
-        'QHeader',
-        'QDrawer',
-        'QPageContainer',
-        'QPage',
-        'QToolbar',
-        'QToolbarTitle',
-        'QBtn',
-        'QIcon',
-        'QList',
-        'QItem',
-        'QItemSection',
-        'QItemLabel'
-      ],
+      config: {
+        loadingBar: {
+          color: 'primary'
+        }
+      }
 
-      directives: [
-        'Ripple'
-      ],
+      // directives: [
+      //   'Ripple'
+      // ],
 
       // Quasar plugins
-      plugins: [
-        'Notify'
-      ]
+      // plugins: [
+      //   'Notify'
+      // ]
 
       // iconSet: 'ionicons-v4'
       // lang: 'de' // Quasar language
     },
 
     supportIE: true,
+    preFetch: true,
 
     build: {
       scopeHoisting: true,
       vueRouterMode: 'history',
+      showProgress: true,
       // vueCompiler: true,
       // gzip: true,
       // analyze: true,
@@ -73,8 +68,8 @@ module.exports = function (ctx) {
       open: true // opens browser window automatically
     },
 
-    // animations: 'all', // --- includes all animations
-    animations: [],
+    animations: 'all', // --- includes all animations
+    // animations: [],
 
     ssr: {
       pwa: false
