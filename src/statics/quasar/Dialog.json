@@ -45,6 +45,10 @@
                 "Are you certain you want to continue?"
               ]
             },
+            "html": {
+              "type": "Boolean",
+              "desc": "Render title and message as HTML; This can lead to XSS attacks, so make sure that you sanitize the message first"
+            },
             "position": {
               "type": "String",
               "desc": "Position of the Dialog on screen. Standard is centered.",
@@ -226,7 +230,8 @@
               ]
             }
           },
-          "desc": "Dialog options"
+          "desc": "Dialog options",
+          "tsType": "QDialogOptions"
         }
       },
       "returns": {

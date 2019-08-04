@@ -9,13 +9,14 @@
     "align": {
       "type": "String",
       "desc": "Specify how to align the actions",
-      "default": "left",
+      "default": "left (for horizontal mode) / stretch (for vertical mode)",
       "values": [
         "left",
         "center",
         "right",
         "between",
-        "around"
+        "around",
+        "stretch"
       ],
       "examples": [
         "between"
